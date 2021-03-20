@@ -1,0 +1,11 @@
+body, html {
+    height: 800px;
+    background-image: url('../images/Bg.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center center;
+  }
+ .my-card{
+   height:270px;
+   padding: 20px;
+ }

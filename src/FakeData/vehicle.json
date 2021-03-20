@@ -1,0 +1,123 @@
+[
+    {
+        "id": 1,
+        "transportType": "Bike",
+        "passengerCapacity": 1,
+        "img":"https://i.ibb.co/y5WXXFG/Frame.png",
+        "rent": 50
+
+    },
+    {
+        "id": 2,
+        "transportType": "Bike",
+        "passengerCapacity": 1,
+        "img":"https://i.ibb.co/y5WXXFG/Frame.png",
+        "rent": 45
+
+    },
+    {
+        "id": 3,
+        "transportType": "Bike",
+        "passengerCapacity": 1,
+        "img":"https://i.ibb.co/y5WXXFG/Frame.png",
+        "rent": 35
+
+    },
+    {
+        "id": 4,
+        "transportType": "Bike",
+        "passengerCapacity": 1,
+        "img":"https://i.ibb.co/y5WXXFG/Frame.png",
+        "rent": 55
+
+    },
+    {
+        "id": 5,
+        "transportType": "Car",
+        "passengerCapacity": 4,
+        "img":"https://i.ibb.co/rkspycM/Frame-2.png",
+        "rent": 200
+
+    },
+    {
+        "id": 6,
+        "transportType": "Car",
+        "passengerCapacity": 4,
+        "img":"https://i.ibb.co/rkspycM/Frame-2.png",
+        "rent": 250
+
+    },
+    {
+        "id": 7,
+        "transportType": "Car",
+        "passengerCapacity": 4,
+        "img":"https://i.ibb.co/rkspycM/Frame-2.png",
+        "rent": 350
+
+    },
+    {
+        "id": 8,
+        "transportType": "Bus",
+        "passengerCapacity": 60,
+        "img":"https://i.ibb.co/WtWvB2W/Frame-1.png",
+        "rent": 550
+
+    },
+    {
+        "id": 9,
+        "transportType": "Bus",
+        "passengerCapacity": 64,
+        "img":"https://i.ibb.co/WtWvB2W/Frame-1.png",
+        "rent": 850
+
+    },
+    {
+        "id": 10,
+        "transportType": "Bus",
+        "passengerCapacity": 55,
+        "img":"https://i.ibb.co/WtWvB2W/Frame-1.png",
+        "rent": 750
+
+    },
+    {
+        "id": 11,
+        "transportType": "Train",
+        "passengerCapacity": 1,
+        "img":"https://i.ibb.co/pKVstMB/Group.png",
+        "rent": 50
+
+    },
+    {
+        "id": 12,
+        "transportType": "Train",
+        "passengerCapacity": 1,
+        "img":"https://i.ibb.co/pKVstMB/Group.png",
+        "rent": 50
+
+    },
+    {
+        "id": 13,
+        "transportType": "Train",
+        "passengerCapacity": 450,
+        "img":"https://i.ibb.co/pKVstMB/Group.png",
+        "rent": 4050
+
+    },
+    {
+        "id": 14,
+        "transportType": "Train",
+        "passengerCapacity": 450,
+        "img":"https://i.ibb.co/pKVstMB/Group.png",
+        "rent": 3050
+
+    },
+    {
+        "id": 15,
+        "transportType": "Train",
+        "passengerCapacity": 250,
+        "img":"https://i.ibb.co/pKVstMB/Group.png",
+        "rent": 50
+
+    }
+]
+

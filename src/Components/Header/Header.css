@@ -1,0 +1,11 @@
+.navbar-light .navbar-brand.logo{
+    font-style: italic;
+    color:#FF6E40;
+    font-weight: 700;
+}
+
+.login-btn{
+    background-color: #FF6E40!important;
+    color:#fff!important;
+
+}
