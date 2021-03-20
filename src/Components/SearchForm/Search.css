@@ -1,17 +1,23 @@
-.visit-form{
+.search-form{
     width: 250px;
     margin:30px auto;
-    background-color: #fff;
+    background-color: #f1eded;
     padding: 10px;
     text-align: center;
 }
-.visit-form input{
+.search-form input{
     display: block;
-    margin-top: 30px;
     padding: 5px;
     border:3px solid gray;
     border-radius: 5px;
     width:200px;
+    margin-top:15px;
+}
+.search-form form {
+    background-color: #fff;
+    padding: 10px;
+    margin: 10px auto;
+    border-radius: 15px;
 }
 .error{
     color:red;

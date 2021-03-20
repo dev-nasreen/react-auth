@@ -6,6 +6,12 @@ body, html {
     background-position: center center;
   }
  .my-card{
-   height:270px;
+   height:315px;
    padding: 20px;
+ }
+ .my-card img{
+   height: 150px;
+ }
+ .card-body h5{
+   margin-top:20px;
  }

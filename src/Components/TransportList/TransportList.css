@@ -1,0 +1,18 @@
+.list-box {
+    height: 80px;
+    border: 1px solid gray;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.list-box h2{
+    font-size: 20px;
+    margin: 0 10px;
+}
+.list-box h3 {
+    font-size: 16px;
+    margin: 0 10px;
+}

@@ -21,10 +21,10 @@ export const TransportContext = createContext();
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
   const [transportType, setTransportType] = useState("");
+  
   return (
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]} >
       <TransportContext.Provider value={[transportType, setTransportType]}>
-      <p>Name: {loggedInUser.name}</p>
         <Router>
          <Header></Header>
         <Switch>

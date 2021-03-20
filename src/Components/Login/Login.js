@@ -8,8 +8,8 @@ import { FcGoogle } from 'react-icons/fc';
 import signup from '../images/signup.jpg'
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../App';
-
 import { useHistory, useLocation } from 'react-router';
+
 
 
 if (!firebase.apps.length) {
@@ -18,7 +18,8 @@ if (!firebase.apps.length) {
 const Login = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
    
-    const [newUser, setNewUser] = useState(false);
+    const [newUser, setNewUser] = useState({isSignedIn: false,
+        name: ''});
     const [user, setUser] = useState({
         isSignedIn: false,
         name: '',
@@ -33,7 +34,7 @@ const Login = () => {
    
 
    const handleGoogleSignIn = () =>{
-    var provider = new firebase.auth.GoogleAuthProvider();
+    const provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth()
   .signInWithPopup(provider)
   .then((result) => {
@@ -43,14 +44,17 @@ const Login = () => {
     history.replace(from);
     console.log(signedInUser);
   }).catch((error) => {
-    var errorMessage = error.message;
-    var email = error.email;
+    const errorMessage = error.message;
+    const email = error.email;
     console.log(errorMessage, email)
   });
   }
   const handleChange = (e) => {
 
     let isFormValid = true;
+    if(e.target.name === 'name'){
+        isFormValid = e.target.value;
+    }
     if (e.target.name === 'email') {
       isFormValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e.target.value);
     }
@@ -65,9 +69,25 @@ const Login = () => {
       setUser(newUserInfo);
     }
   }
+
+  const updateUserInfo = name => {
+    let user = firebase.auth().currentUser;
+    user.updateProfile({
+      displayName: name,
+     
+    }).then(() => {
+     console.log('User name updated successfully')
+    }).catch(function(error) {
+     console.log(error)
+    });
+   }
+  //  const { register, handleSubmit, errors } = useForm();
+  //  const onSubmit = data =>{
+    
+  // };
   const handleSignIn = (e) => {
-    console.log(user.email);
-    console.log(user.password);
+    console.log(user.email, user.password, user.name);
+   
     if (newUser && user.email && user.password) {
       firebase.auth().createUserWithEmailAndPassword(user.email, user.password)
         .then((res) => {
@@ -77,7 +97,7 @@ const Login = () => {
           setUser(newUserInfo);
           setLoggedInUser(newUserInfo);
            history.replace(from);
-         // updateUserInfo(user.name);
+         updateUserInfo(user.name);
         })
         .catch((error) => {
           const newUserInfo = { ...user };
@@ -96,6 +116,7 @@ const Login = () => {
           newUserInfo.error = '';
           setUser(newUserInfo);
           setLoggedInUser(newUserInfo);
+          history.replace(from);
           console.log('sign in user info', res.user)
         })
         .catch((error) => {
@@ -104,6 +125,7 @@ const Login = () => {
           newUserInfo.success = false;
           setUser(newUserInfo);
           setLoggedInUser(newUserInfo);
+         
         });
     }
     e.preventDefault();
@@ -121,6 +143,7 @@ const Login = () => {
                             <h2 className="form-title">{newUser ? 'Sign Up' : 'Sign In'}</h2>
                             <form  onSubmit={handleSignIn} className="register-form" id="register-form">
                                {newUser && <div className="form-group">
+
                                     <label htmlFor="name"><i className="zmdi zmdi-account material-icons-name"></i></label>
                                     <input type="text" name="name" onBlur={handleChange} id="name"  placeholder="Your Name"/>
                                 </div>}

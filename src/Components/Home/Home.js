@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import Transport from '../Transport/Transport';
-import Fakedata from "../../FakeData/new.json"
+import fakeData from "../../fakeData/vehicleCategory.json"
 import './Home.css';
 
 const Home = () => {
  const [transports, setTransports] = useState([]);
     useEffect(()=> {
-        setTransports(Fakedata);
+        setTransports(fakeData);
     },[])
 
 

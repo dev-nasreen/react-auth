@@ -10,8 +10,6 @@ const Destination = () => {
     <div className="row">
       <div className="col-10  col-md-4 ">
             <SearchForm transportType={transportType}></SearchForm>
-            
-        
       </div>
       <div className="col-10  col-md-8 ">
       <h1>this is destination page.</h1>
