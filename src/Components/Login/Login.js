@@ -134,42 +134,32 @@ const Login = () => {
     return (
         <>
         <div className="main">
-
-            <div className="signup">
                 <div className="form-container">
                     <div className="container">
                     <div className="signup-content row">
-                        <div className="signup-form col-md-6 col-10">
+                        <div className="signup-form col-md-6 col-10 mx-auto gy-3">
                             <h2 className="form-title">{newUser ? 'Sign Up' : 'Sign In'}</h2>
                             <form  onSubmit={handleSignIn} className="register-form" id="register-form">
                                {newUser && <div className="form-group">
-
-                                    <label htmlFor="name"><i className="zmdi zmdi-account material-icons-name"></i></label>
-                                    <input type="text" name="name" onBlur={handleChange} id="name"  placeholder="Your Name"/>
+                                    <input type="text" name="name" onBlur={handleChange} id="name"  placeholder="Your Name" required/>
                                 </div>}
                                 <div className="form-group">
-                                    <label htmlFor="email"><i className="zmdi zmdi-email"></i></label>
-                                    <input type="email" name="email" onBlur={handleChange} id="email" placeholder="Your Email"/>
+                                    <input type="email" name="email" onBlur={handleChange} id="email" placeholder="Your Email" required/>
                                 </div>
                                 <div className="form-group">
-                                    <label htmlFor="pass"><i className="zmdi zmdi-lock"></i></label>
-                                    <input type="password" name="password" onBlur={handleChange} id="pass"  placeholder="Password"/>
+                                    <input type="password" name="password" onBlur={handleChange} id="pass"  placeholder="Password" required/>
                                 </div>
                                {newUser && <div className="form-group">
-                                    <label htmlFor="re-pass"><i className="zmdi zmdi-lock-outline"></i></label>
-                                    <input type="password" name="password" onBlur={handleChange} id="re_pass"  placeholder="Repeat your password"/>
+                                    <input type="password" name="password" onBlur={handleChange} id="re_pass"  placeholder="Repeat your password" required/>
                                 </div>}
-                                <div className="form-group agree-term">
-                                    <input type="checkbox" name="agree-term" id="agree-term"  />
-                                    <label htmlFor="agree-term"  className="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" className="term-service">Terms of service</a></label>
-                                </div>
+                                
                                 <div className="form-group form-button">
-                                    <input type="submit" name="signup" id="signup" className="form-submit" value={newUser ?"Register" : "Login"}/>
+                                    <input type="submit" name="signup" id="signup" value={newUser ?"Register" : "Login"}/>
                                 </div>
                                 
                             </form>
                             <div className="social-login">
-                                    <span className="social-label">Or login with</span>
+                                    <span className="social-label">Or Login with</span>
                                     <ul className="socials">
                                         <li><span onClick={handleGoogleSignIn}><FcGoogle/> </span></li>
                                         {/* <li> <span onClick={handleFacebookSignIn}><FcGoogle/> </span></li> */}
@@ -183,49 +173,6 @@ const Login = () => {
                     </div>
                     </div>
                 </div>
-            </div>
-           
-    {/* <div className="sign-in">
-        <div className="form-container">
-            <div className="container">
-            <div className="signin-content row">
-                <div className="signin-image col-md-6 col-10 mx-auto">
-                    <img src={signin} alt="sing up" />
-                    <span onClick={() => setNewUser(!newUser)} className="signup-image-link">Create an account</span>
-                </div>
-
-                <div className="signin-form col-md-6 col-10 mx-auto">
-                    <h2 className="form-title">Sign In</h2>
-                    <form  className="register-form" onSubmit={handleSubmit}>
-                        <div className="form-group">
-                            <label htmlFor="email"><i className="zmdi zmdi-account material-icons-name"></i></label>
-                            <input type="email" name="email" onBlur={handleChange} placeholder="Your Email"/>
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="pass"><i className="zmdi zmdi-lock"></i></label>
-                            <input type="password" name="pass" onBlur={handleChange} placeholder="Password"/>
-                        </div>
-                        <div className="form-group agree-term">
-                            <input type="checkbox" name="remember-me" id="remember-me" />
-                            <label for="remember-me" className="label-agree-term"><span><span></span></span>Remember me</label>
-                        </div>
-                        <div className="form-group form-button">
-                            <input type="submit" name="signin" onClick={handleSubmit} id="signin" className="form-submit" value="Log in"/>
-                        </div>
-                    </form>
-                    <div className="social-login">
-                        <span className="social-label">Or login with</span>
-                        <ul className="socials">
-                            <li><span onClick={handleSignIn}><FaFacebook/></span></li>
-                            <li> <span onClick={handleFacebookSignIn}><FcGoogle/> </span></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
-    </div> */}
-
 </div>
 </>
     );

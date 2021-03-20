@@ -20,15 +20,15 @@
         "transportType": "Bus",
         "passengerCapacity": 60,
         "img":"https://i.ibb.co/C11YJpk/bus.png",
-        "rent": 550
+        "rent": 100
 
     },
     {
         "id": 11,
         "transportType": "Train",
-        "passengerCapacity": 1,
+        "passengerCapacity": 500,
         "img":"https://i.ibb.co/WgSLhpY/train.png",
-        "rent": 50
+        "rent": 150
 
     }
 ]

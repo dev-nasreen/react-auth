@@ -38,9 +38,10 @@ const Header = () => {
                     </ul>
                   </div>
                 </div>
+                {loggedInUser.email && <button className="btn logout-btn"><span onClick={ () => setLoggedInUser({})}>LogOut</span></button>} 
               </nav>
 
-             {loggedInUser.email && <button className="btn logout-btn"><span onClick={ () => setLoggedInUser({})}>Log Out</span></button>} 
+             
           </div>
         </div>
 

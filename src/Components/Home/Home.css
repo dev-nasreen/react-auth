@@ -1,5 +1,5 @@
 body, html {
-    height: 800px;
+    height: 100%;
     background-image: url('../images/Bg.jpg');
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -14,4 +14,12 @@ body, html {
  }
  .card-body h5{
    margin-top:20px;
+ }
+
+ @media (max-width: 767px) {
+  body, html{
+    background-image: none;
+    background-color:skyblue;
+  }
+
  }

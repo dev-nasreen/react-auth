@@ -60,7 +60,7 @@
         "transportType": "Bus",
         "passengerCapacity": 60,
         "img":"https://i.ibb.co/C11YJpk/bus.png",
-        "rent": 550
+        "rent": 100
 
     },
     {
@@ -68,7 +68,7 @@
         "transportType": "Bus",
         "passengerCapacity": 64,
         "img":"https://i.ibb.co/C11YJpk/bus.png",
-        "rent": 850
+        "rent": 150
 
     },
     {
@@ -76,23 +76,23 @@
         "transportType": "Bus",
         "passengerCapacity": 55,
         "img":"https://i.ibb.co/WtWvB2W/Frame-1.png",
-        "rent": 750
+        "rent": 250
 
     },
     {
         "id": 11,
         "transportType": "Train",
-        "passengerCapacity": 1,
+        "passengerCapacity": 300,
         "img":"https://i.ibb.co/WgSLhpY/train.png",
-        "rent": 50
+        "rent": 350
 
     },
     {
         "id": 12,
         "transportType": "Train",
-        "passengerCapacity": 1,
+        "passengerCapacity": 500,
         "img":"https://i.ibb.co/WgSLhpY/train.png",
-        "rent": 50
+        "rent": 150
 
     },
     {
@@ -100,15 +100,15 @@
         "transportType": "Train",
         "passengerCapacity": 450,
         "img":"https://i.ibb.co/pKVstMB/Group.png",
-        "rent": 4050
+        "rent": 405
 
     },
     {
         "id": 14,
         "transportType": "Train",
-        "passengerCapacity": 450,
+        "passengerCapacity": 350,
         "img":"https://i.ibb.co/WgSLhpY/train.png",
-        "rent": 3050
+        "rent": 305
 
     },
     {

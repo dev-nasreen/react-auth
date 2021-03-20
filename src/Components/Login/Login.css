@@ -5,7 +5,7 @@ body{
     background: #f8f8f8;
     padding: 150px 0;
 }
-input {
+.register-form input {
     width: 100%;
     display: block;
     border: none;
@@ -15,15 +15,16 @@ input {
     box-sizing: border-box;
     outline: none;
     background: transparent;
+    padding-top: 30px;
 }
-input[type=checkbox]:not(old) {
+.register-form input[type=checkbox]:not(old) {
     width: 2em;
     margin: 0;
     padding: 0;
     font-size: 1em;
     margin-top: 10px;
 }
-input[type=checkbox]:not(old) + label {
+.register-form input[type=checkbox]:not(old) + label {
     display: inline-block;
     line-height: 1.5em;
     margin-top: 6px;
@@ -36,7 +37,7 @@ input[type=checkbox]:not(old) + label {
     position: relative;
     top: 0%;
 }
-.form-submit {
+.form-button input[type=submit] {
     display: inline-block;
     background: #6dabe4;
     color: #fff;
@@ -50,11 +51,12 @@ input[type=checkbox]:not(old) + label {
     -ms-border-radius: 5px;
     margin-top: 25px;
     cursor: pointer;
+    font-size:20px;
 }
 
 
-.signup, .sign-in {
-    width: 900px;
+.form-container{
+    width: 80%;
     background: #fff;
     margin: 0 auto;
     box-shadow: 0px 15px 16.83px 0.17px rgb(0 0 0 / 5%);
@@ -74,6 +76,10 @@ input[type=checkbox]:not(old) + label {
     color: #111;
     display: block;
     text-align: center;
+}
+.signup-image-link a{
+    display: inline-block;
+    margin-left: 10px;
 }
 .social-login {
     align-items: center;
