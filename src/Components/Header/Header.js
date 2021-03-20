@@ -31,9 +31,8 @@ const Header = () => {
                       <li className="nav-item">
                         <Link className="nav-link" to="/contact">Contact</Link>
                       </li>
-                     
                       <li className="nav-item">
-                      {loggedInUser.email ? <span className="user-name">{loggedInUser.name}</span> : <Link className="nav-link" to="/login"><button className="btn login-btn">Login</button></Link>}
+                      {loggedInUser.name ? <span className="user-name">{loggedInUser.name}</span> : <Link className="nav-link" to="/login"><button className="btn login-btn">Login</button></Link>}
                       </li>
                     </ul>
                   </div>

@@ -25,6 +25,7 @@ const Login = () => {
         name: '',
         email: '',
         password: '',
+        rePassword: '',
         photo: '',
         error: ''
     })
@@ -58,8 +59,7 @@ const Login = () => {
     if (e.target.name === 'email') {
       isFormValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e.target.value);
     }
-    if (e.target.name === 'password') {
-      // const isPasswordValid= e.target.value.length > 6;
+    if (e.target.name === 'password' ) {
       isFormValid = /^(?=.*\d)(?=.*[a-zA-Z])[a-zA-Z0-9]{6,}$/.test(e.target.value);
 
     }
@@ -71,24 +71,24 @@ const Login = () => {
   }
 
   const updateUserInfo = name => {
-    let user = firebase.auth().currentUser;
+    const user = firebase.auth().currentUser;
     user.updateProfile({
       displayName: name,
      
     }).then(() => {
-     console.log('User name updated successfully')
-    }).catch(function(error) {
+      const {displayName, email} = user;
+      const newUserInfo = {name: displayName, email}
+      setLoggedInUser(newUserInfo);
+      
+    }).catch(error => {
      console.log(error)
     });
    }
-  //  const { register, handleSubmit, errors } = useForm();
-  //  const onSubmit = data =>{
-    
-  // };
+
   const handleSignIn = (e) => {
     console.log(user.email, user.password, user.name);
    
-    if (newUser && user.email && user.password) {
+    if (newUser && user.email && user.password && user.password === user.rePassword) {
       firebase.auth().createUserWithEmailAndPassword(user.email, user.password)
         .then((res) => {
           const newUserInfo = { ...user };
@@ -150,7 +150,8 @@ const Login = () => {
                                     <input type="password" name="password" onBlur={handleChange} id="pass"  placeholder="Password" required/>
                                 </div>
                                {newUser && <div className="form-group">
-                                    <input type="password" name="password" onBlur={handleChange} id="re_pass"  placeholder="Repeat your password" required/>
+                                    <input type="password" name="rePassword" onBlur={handleChange} id="re_pass"  placeholder="Repeat your password" required/>
+                                    {user.password === user.rePassword || <span className="text-danger">Password not matched.</span>}
                                 </div>}
                                 
                                 <div className="form-group form-button">
@@ -162,7 +163,6 @@ const Login = () => {
                                     <span className="social-label">Or Login with</span>
                                     <ul className="socials">
                                         <li><span onClick={handleGoogleSignIn}><FcGoogle/> </span></li>
-                                        {/* <li> <span onClick={handleFacebookSignIn}><FcGoogle/> </span></li> */}
                                     </ul>
                                 </div>
                         </div>
