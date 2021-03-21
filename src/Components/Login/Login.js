@@ -50,12 +50,9 @@ const Login = () => {
     console.log(errorMessage, email)
   });
   }
-  const handleChange = (e) => {
 
+  const handleChange = (e) => {
     let isFormValid = true;
-    if(e.target.name === 'name'){
-        isFormValid = e.target.value;
-    }
     if (e.target.name === 'email') {
       isFormValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e.target.value);
     }
@@ -71,22 +68,19 @@ const Login = () => {
   }
 
   const updateUserInfo = name => {
-    const user = firebase.auth().currentUser;
+    let user = firebase.auth().currentUser;
     user.updateProfile({
       displayName: name,
      
     }).then(() => {
-      const {displayName, email} = user;
-      const newUserInfo = {name: displayName, email}
-      setLoggedInUser(newUserInfo);
-      
+     console.log('User name updated successfully')
     }).catch(error => {
      console.log(error)
     });
    }
 
   const handleSignIn = (e) => {
-    console.log(user.email, user.password, user.name);
+    console.log(user.email, user.password);
    
     if (newUser && user.email && user.password && user.password === user.rePassword) {
       firebase.auth().createUserWithEmailAndPassword(user.email, user.password)
@@ -97,7 +91,8 @@ const Login = () => {
           setUser(newUserInfo);
           setLoggedInUser(newUserInfo);
            history.replace(from);
-         updateUserInfo(user.name);
+           updateUserInfo(user.name);
+          console.log('sign in user info', res.user)
         })
         .catch((error) => {
           const newUserInfo = { ...user };
@@ -105,6 +100,7 @@ const Login = () => {
           newUserInfo.success = false;
           setUser(newUserInfo);
           setLoggedInUser(newUserInfo);
+          history.replace(from);
         });
     }
 
@@ -125,7 +121,7 @@ const Login = () => {
           newUserInfo.success = false;
           setUser(newUserInfo);
           setLoggedInUser(newUserInfo);
-         
+          history.replace(from);
         });
     }
     e.preventDefault();

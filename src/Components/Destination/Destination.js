@@ -1,7 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router';
 import SearchForm from '../SearchForm/SearchForm';
-import Map from '../images/Map.png'
 
 
 const Destination = () => {

@@ -6,7 +6,7 @@ import fakeData from '../../fakeData/vehicle.json'
 import TransportList from '../TransportList/TransportList';
 
 const SearchForm = ({ transportType }) => {
-
+  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
   const [transportCategory, setTransportCategory] = useState([]);
   const { register, handleSubmit, errors } = useForm();
   const [showDetail, setShowDetail] = useState(false);
